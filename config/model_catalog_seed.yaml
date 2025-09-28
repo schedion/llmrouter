@@ -1,0 +1,199 @@
+# Canonical model mapping seed for llmrouter.
+# Add entries here to publish additional models in the catalog.
+# Each provider mapping should use the exact upstream model identifier.
+models:
+  - canonical: deepseek-r1
+    aliases:
+      - deepseek-r1-distill-llama-70b
+    providers:
+      groq:
+        model: deepseek-r1-distill-llama-70b
+      openrouter:
+        model: deepseek/deepseek-r1:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: deepseek-ai/deepseek-r1
+      huggingface:
+        model: deepseek-ai/DeepSeek-R1
+
+  - canonical: gpt-oss-120b
+    aliases:
+      - openai/gpt-oss-120b
+    providers:
+      groq:
+        model: openai/gpt-oss-120b
+      openrouter:
+        model: openai/gpt-oss-120b:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: openai/gpt-oss-120b
+      huggingface:
+        model: openai/gpt-oss-120b
+
+  - canonical: gpt-oss-20b
+    aliases:
+      - openai/gpt-oss-20b
+    providers:
+      groq:
+        model: openai/gpt-oss-20b
+      openrouter:
+        model: openai/gpt-oss-20b:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: openai/gpt-oss-20b
+      huggingface:
+        model: openai/gpt-oss-20b
+
+  - canonical: gemma-2-9b-it
+    providers:
+      groq:
+        model: gemma2-9b-it
+      openrouter:
+        model: google/gemma-2-9b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-2-9b-it
+      huggingface:
+        model: google/gemma-2-9b-it
+
+  - canonical: gemma-3-12b-it
+    providers:
+      groq:
+        model: google/gemma-3-12b-it
+      openrouter:
+        model: google/gemma-3-12b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-3-12b-it
+      huggingface:
+        model: google/gemma-3-12b-it
+
+  - canonical: gemma-3-27b-it
+    providers:
+      groq:
+        model: google/gemma-3-27b-it
+      openrouter:
+        model: google/gemma-3-27b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-3-27b-it
+      huggingface:
+        model: google/gemma-3-27b-it
+
+  - canonical: gemma-3-4b-it
+    providers:
+      groq:
+        model: google/gemma-3-4b-it
+      openrouter:
+        model: google/gemma-3-4b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-3-4b-it
+      huggingface:
+        model: google/gemma-3-4b-it
+
+  - canonical: gemma-3n-e2b-it
+    providers:
+      groq:
+        model: google/gemma-3n-e2b-it
+      openrouter:
+        model: google/gemma-3n-e2b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-3n-e2b-it
+      huggingface:
+        model: google/gemma-3n-e2b-it
+
+  - canonical: gemma-3n-e4b-it
+    providers:
+      groq:
+        model: google/gemma-3n-e4b-it
+      openrouter:
+        model: google/gemma-3n-e4b-it:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: google/gemma-3n-e4b-it
+      huggingface:
+        model: google/gemma-3n-e4b-it
+
+  - canonical: llama-4-maverick
+    aliases:
+      - meta-llama/llama-4-maverick
+    providers:
+      groq:
+        model: llama-4-maverick-17b-128e-instruct
+      openrouter:
+        model: meta-llama/llama-4-maverick:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: meta/llama-4-maverick-17b-128e-instruct
+      huggingface:
+        model: meta-llama/Llama-4-Maverick-17B-128E-Instruct
+
+  - canonical: llama-4-scout
+    aliases:
+      - meta-llama/llama-4-scout
+    providers:
+      groq:
+        model: llama-4-scout-17b-16e-instruct
+      openrouter:
+        model: meta-llama/llama-4-scout:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: meta/llama-4-scout-17b-16e-instruct
+      huggingface:
+        model: meta-llama/Llama-4-Scout-17B-16E-Instruct
+
+  - canonical: llama-3.3-70b
+    aliases:
+      - meta-llama/llama-3.3-70b
+    providers:
+      groq:
+        model: llama-3.3-70b-versatile
+      openrouter:
+        model: meta-llama/llama-3.3-70b-instruct:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: meta/llama-3.3-70b-instruct
+      huggingface:
+        model: meta-llama/Meta-Llama-3.3-70B-Instruct
+
+  - canonical: moonshotai-kimi-k2
+    aliases:
+      - moonshotai/kimi-k2
+    providers:
+      groq:
+        model: moonshotai/kimi-k2-instruct
+      openrouter:
+        model: moonshotai/kimi-k2:free
+        extra_headers:
+          HTTP-Referer: https://github.com/llmrouter
+          X-Title: llmrouter
+      nvidia_nim:
+        model: moonshotai/kimi-k2-instruct
+      huggingface:
+        model: moonshotai/kimi-k2

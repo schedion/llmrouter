@@ -55,7 +55,7 @@ Set `LLMROUTER_CONFIG` to point elsewhere if you prefer a different path. When t
 
 To troubleshoot discovery results, run `python scripts/debug_models.py` inside your virtualenv. Use `--json` for machine-readable output or `--full` to print the complete list of models returned by each upstream.
 
-The bundled GitHub Action (`.github/workflows/model-catalog.yml`) invokes `scripts/build_free_model_catalog.py` to collate the free-tier model lists from Groq, OpenRouter, and NVIDIA NIM into `generated/model_index.json`. Secrets `GROQ_API_KEY`, `OPENROUTER_API_KEY`, and `NVIDIA_NIM_KEY` must be set in the repository before the workflow can run. The resulting catalog is published as an artifact, and llmrouter fetches it at startup (override the URL with `LLMROUTER_MODEL_INDEX_URL` if you host it elsewhere). Set `LLMROUTER_PROVIDERS` (e.g., `groq,openrouter,nvidia_nim`) to specify which providers must advertise a model before it is enabled locally, and ensure the corresponding API keys are available in your runtime environment. Use `python scripts/debug_models.py` to inspect which catalog entries are active for your deployment.
+The bundled GitHub Action (`.github/workflows/model-catalog.yml`) invokes `scripts/build_free_model_catalog.py` to collate the free-tier model lists from Groq, OpenRouter, and NVIDIA NIM into `generated/model_index.json`. Secrets `GROQ_API_KEY`, `OPENROUTER_API_KEY`, and `NVIDIA_NIM_KEY` must be set in the repository before the workflow can run. The resulting catalog is published as an artifact (including a `provider_catalogs` section with the raw free-model lists), and llmrouter fetches it at startup (override the URL with `LLMROUTER_MODEL_INDEX_URL` if you host it elsewhere). Set `LLMROUTER_PROVIDERS` (e.g., `groq,openrouter,nvidia_nim`) to specify which providers must advertise a model before it is enabled locally, and ensure the corresponding API keys are available in your runtime environment. Use `python scripts/debug_models.py` to inspect which catalog entries are active for your deployment.
 
 ### Run locally
 ```bash
@@ -69,6 +69,10 @@ Then hit the API:
 curl -X POST http://localhost:8000/v1/chat/completions \
   -H 'Content-Type: application/json' \
   -d '{"messages": [{"role": "user", "content": "ping"}]}'
+```
+List available canonical models and provider mappings with:
+```bash
+curl http://localhost:8000/v1/models
 ```
 Override the default model reported in responses by setting `LLMROUTER_DEFAULT_MODEL`.
 
@@ -89,7 +93,8 @@ Mounting the `config/` directory lets the container pick up your provider defini
 - Provider credentials: `GROQ_API_KEY`, `OPENROUTER_API_KEY`, `NVIDIA_NIM_KEY` (and, once mapping is extended, `HUGGINGFACE_API_TOKEN`).
 
 ## Maintaining the model catalog
-- Regenerate the catalog locally with `python scripts/build_free_model_catalog.py --providers groq,openrouter,nvidia_nim --output generated/model_index.json --pretty`. The script expects the provider API keys in your environment and writes `generated/model_index.json` (ignored by git).
+- Edit `config/model_catalog_seed.yaml` to add or adjust canonical model mappings. Each entry explicitly names the upstream model IDs per provider—no heuristics are applied.
+- Regenerate the catalog locally with `python scripts/build_free_model_catalog.py --providers groq,openrouter,nvidia_nim --output generated/model_index.json --pretty`. The script reads the seed, fetches each provider's free model list, and writes `generated/model_index.json` (ignored by git except for the final published file).
 - The GitHub Action `.github/workflows/model-catalog.yml` runs the same script on a schedule and uploads the JSON artifact. Publish the file to a static location (for example GitHub Pages or S3) and point `LLMROUTER_MODEL_INDEX_URL` at it so deployments can fetch the latest mapping.
 
 ## Roadmap

@@ -1,0 +1,46 @@
+# Example configuration for llmrouter providers.
+providers:
+  - name: local-echo
+    type: echo
+    priority: 0
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_time_seconds: 15
+    mock_failure_rate: 0.0
+  - name: flaky-echo
+    type: echo
+    priority: 1
+    circuit_breaker:
+      failure_threshold: 2
+      recovery_time_seconds: 10
+    mock_failure_rate: 0.3
+  - name: hf-mistral
+    type: huggingface
+    priority: 10
+    model: mistralai/Mixtral-8x7B-Instruct-v0.1
+    api_key_env: HUGGINGFACE_API_TOKEN
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_time_seconds: 30
+    mock_failure_rate: 0.0
+  - name: groq-mixtral
+    type: groq
+    priority: 20
+    model: mixtral-8x7b-32768
+    api_key_env: GROQ_API_KEY
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_time_seconds: 15
+    mock_failure_rate: 0.0
+  - name: openrouter-llama3
+    type: openrouter
+    priority: 30
+    model: meta-llama/llama-3-70b-instruct
+    api_key_env: OPENROUTER_API_KEY
+    extra_headers:
+      HTTP-Referer: https://your-app.example.com
+      X-Title: llmrouter
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_time_seconds: 15
+    mock_failure_rate: 0.0
