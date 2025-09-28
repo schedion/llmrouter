@@ -2,7 +2,8 @@
   "providers": [
     "groq",
     "openrouter",
-    "nvidia_nim"
+    "nvidia_nim",
+    "huggingface"
   ],
   "models": [
     {
@@ -44,6 +45,19 @@
         "nvidia_nim": {
           "model": "deepseek-ai/deepseek-r1",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "deepseek-ai/DeepSeek-R1",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -104,6 +118,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "openai/gpt-oss-120b",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -146,6 +173,19 @@
         "nvidia_nim": {
           "model": "openai/gpt-oss-20b",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -205,6 +245,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-2-9b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -246,6 +299,19 @@
         "nvidia_nim": {
           "model": "google/gemma-3-12b-it",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-3-12b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -305,6 +371,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-3-27b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -346,6 +425,19 @@
         "nvidia_nim": {
           "model": "google/gemma-3-4b-it",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-3-4b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -405,6 +497,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-3n-e2b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -446,6 +551,19 @@
         "nvidia_nim": {
           "model": "google/gemma-3n-e4b-it",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-3n-e4b-it",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -506,6 +624,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -548,6 +679,19 @@
         "nvidia_nim": {
           "model": "meta/llama-4-scout-17b-16e-instruct",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
@@ -608,6 +752,19 @@
             "recovery_time_seconds": 15
           },
           "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "meta-llama/Meta-Llama-3.3-70B-Instruct",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
         }
       }
     },
@@ -650,6 +807,19 @@
         "nvidia_nim": {
           "model": "moonshotai/kimi-k2-instruct",
           "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "moonshotai/kimi-k2",
+          "api_key_env": "HUGGINGFACE_API_TOKEN",
           "base_url": null,
           "extra_headers": {},
           "allow_paid": false,
