@@ -27,3 +27,5 @@ htmlcov/
 
 # Project specific
 config/providers.yaml
+generated/
+!generated/model_index.json
