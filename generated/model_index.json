@@ -1,0 +1,518 @@
+{
+  "providers": [
+    "groq",
+    "openrouter",
+    "nvidia_nim"
+  ],
+  "models": [
+    {
+      "canonical": "deepseek",
+      "aliases": [
+        "deepseek",
+        "deepseek-ai-deepseek",
+        "deepseek-ai/deepseek-coder-6.7b-instruct",
+        "deepseek-ai/deepseek-r1",
+        "deepseek-ai/deepseek-r1-0528",
+        "deepseek-ai/deepseek-r1-distill-llama-8b",
+        "deepseek-ai/deepseek-r1-distill-qwen-14b",
+        "deepseek-ai/deepseek-r1-distill-qwen-32b",
+        "deepseek-ai/deepseek-r1-distill-qwen-7b",
+        "deepseek-ai/deepseek-v3.1",
+        "deepseek-chat",
+        "deepseek-chat-v3-0324",
+        "deepseek-chat-v3.1",
+        "deepseek-coder-6.7b",
+        "deepseek-coder-6.7b-instruct",
+        "deepseek-deepseek",
+        "deepseek-prover-v2",
+        "deepseek-r1",
+        "deepseek-r1-0528",
+        "deepseek-r1-0528-qwen3",
+        "deepseek-r1-0528-qwen3-8b",
+        "deepseek-r1-distill-llama",
+        "deepseek-r1-distill-llama-70b",
+        "deepseek-r1-distill-llama-8b",
+        "deepseek-r1-distill-qwen",
+        "deepseek-r1-distill-qwen-14b",
+        "deepseek-r1-distill-qwen-32b",
+        "deepseek-r1-distill-qwen-7b",
+        "deepseek-v3",
+        "deepseek-v3-0324",
+        "deepseek-v3.1",
+        "deepseek-v3.1-base",
+        "deepseek-v3.1-terminus",
+        "deepseek/deepseek-chat",
+        "deepseek/deepseek-chat-v3-0324",
+        "deepseek/deepseek-chat-v3.1",
+        "deepseek/deepseek-prover-v2",
+        "deepseek/deepseek-r1",
+        "deepseek/deepseek-r1-0528",
+        "deepseek/deepseek-r1-0528-qwen3-8b",
+        "deepseek/deepseek-r1-distill-llama-70b",
+        "deepseek/deepseek-r1-distill-llama-8b",
+        "deepseek/deepseek-r1-distill-qwen-14b",
+        "deepseek/deepseek-r1-distill-qwen-32b",
+        "deepseek/deepseek-v3.1-base",
+        "deepseek/deepseek-v3.1-terminus"
+      ],
+      "providers": {
+        "groq": {
+          "model": "deepseek-r1-distill-llama-70b",
+          "api_key_env": "GROQ_API_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "deepseek/deepseek-r1",
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "deepseek-ai/deepseek-r1",
+          "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "gpt",
+      "aliases": [
+        "gpt",
+        "gpt-3.5",
+        "gpt-3.5-0613",
+        "gpt-3.5-16k",
+        "gpt-3.5-turbo",
+        "gpt-3.5-turbo-0613",
+        "gpt-3.5-turbo-16k",
+        "gpt-3.5-turbo-instruct",
+        "gpt-4",
+        "gpt-4-0314",
+        "gpt-4-1106",
+        "gpt-4-1106-preview",
+        "gpt-4-turbo",
+        "gpt-4-turbo-preview",
+        "gpt-4.1",
+        "gpt-4.1-mini",
+        "gpt-4.1-nano",
+        "gpt-4o",
+        "gpt-4o-2024",
+        "gpt-4o-2024-05",
+        "gpt-4o-2024-05-13",
+        "gpt-4o-2024-08",
+        "gpt-4o-2024-08-06",
+        "gpt-4o-2024-11",
+        "gpt-4o-2024-11-20",
+        "gpt-4o-audio",
+        "gpt-4o-audio-preview",
+        "gpt-4o-mini",
+        "gpt-4o-mini-2024",
+        "gpt-4o-mini-2024-07",
+        "gpt-4o-mini-2024-07-18",
+        "gpt-4o-mini-search",
+        "gpt-4o-mini-search-preview",
+        "gpt-4o-search",
+        "gpt-4o-search-preview",
+        "gpt-4o:extended",
+        "gpt-5",
+        "gpt-5-chat",
+        "gpt-5-codex",
+        "gpt-5-mini",
+        "gpt-5-nano",
+        "gpt-oss",
+        "gpt-oss-120b",
+        "gpt-oss-20b",
+        "openai-gpt",
+        "openai/gpt-3.5-turbo",
+        "openai/gpt-3.5-turbo-0613",
+        "openai/gpt-3.5-turbo-16k",
+        "openai/gpt-3.5-turbo-instruct",
+        "openai/gpt-4",
+        "openai/gpt-4-0314",
+        "openai/gpt-4-1106-preview",
+        "openai/gpt-4-turbo",
+        "openai/gpt-4-turbo-preview",
+        "openai/gpt-4.1",
+        "openai/gpt-4.1-mini",
+        "openai/gpt-4.1-nano",
+        "openai/gpt-4o",
+        "openai/gpt-4o-2024-05-13",
+        "openai/gpt-4o-2024-08-06",
+        "openai/gpt-4o-2024-11-20",
+        "openai/gpt-4o-audio-preview",
+        "openai/gpt-4o-mini",
+        "openai/gpt-4o-mini-2024-07-18",
+        "openai/gpt-4o-mini-search-preview",
+        "openai/gpt-4o-search-preview",
+        "openai/gpt-4o:extended",
+        "openai/gpt-5",
+        "openai/gpt-5-chat",
+        "openai/gpt-5-codex",
+        "openai/gpt-5-mini",
+        "openai/gpt-5-nano",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "GROQ_API_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "openai/gpt-5",
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": true,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "kimi-k2",
+      "aliases": [
+        "kimi-dev",
+        "kimi-dev-72b",
+        "kimi-k2",
+        "kimi-k2-0905",
+        "kimi-k2-instruct",
+        "kimi-k2-instruct-0905",
+        "kimi-vl-a3b-thinking",
+        "moonshotai-kimi",
+        "moonshotai/kimi-dev-72b",
+        "moonshotai/kimi-k2",
+        "moonshotai/kimi-k2-0905",
+        "moonshotai/kimi-k2-instruct",
+        "moonshotai/kimi-k2-instruct-0905",
+        "moonshotai/kimi-vl-a3b-thinking"
+      ],
+      "providers": {
+        "groq": {
+          "model": "moonshotai/kimi-k2-instruct",
+          "api_key_env": "GROQ_API_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "moonshotai/kimi-k2",
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "moonshotai/kimi-k2-instruct",
+          "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "llama",
+      "aliases": [
+        "llama",
+        "llama-3",
+        "llama-3-70b",
+        "llama-3-70b-instruct",
+        "llama-3-8b",
+        "llama-3-8b-instruct",
+        "llama-3.1",
+        "llama-3.1-405b",
+        "llama-3.1-405b-instruct",
+        "llama-3.1-70b",
+        "llama-3.1-70b-instruct",
+        "llama-3.1-8b",
+        "llama-3.1-8b-instruct",
+        "llama-3.2",
+        "llama-3.2-11b-vision",
+        "llama-3.2-11b-vision-instruct",
+        "llama-3.2-1b",
+        "llama-3.2-1b-instruct",
+        "llama-3.2-3b",
+        "llama-3.2-3b-instruct",
+        "llama-3.2-90b-vision",
+        "llama-3.2-90b-vision-instruct",
+        "llama-3.3",
+        "llama-3.3-70b",
+        "llama-3.3-70b-instruct",
+        "llama-3.3-70b-versatile",
+        "llama-3.3-8b",
+        "llama-3.3-8b-instruct",
+        "llama-4-maverick",
+        "llama-4-maverick-17b",
+        "llama-4-maverick-17b-128e",
+        "llama-4-maverick-17b-128e-instruct",
+        "llama-4-scout",
+        "llama-4-scout-17b",
+        "llama-4-scout-17b-16e",
+        "llama-4-scout-17b-16e-instruct",
+        "llama-guard",
+        "llama-guard-2",
+        "llama-guard-2-8b",
+        "llama-guard-3",
+        "llama-guard-3-8b",
+        "llama-guard-4",
+        "llama-guard-4-12b",
+        "llama-prompt-guard",
+        "llama-prompt-guard-2",
+        "llama-prompt-guard-2-22m",
+        "llama-prompt-guard-2-86m",
+        "meta-llama",
+        "meta-llama-llama",
+        "meta-llama/llama-3-70b-instruct",
+        "meta-llama/llama-3-8b-instruct",
+        "meta-llama/llama-3.1-405b",
+        "meta-llama/llama-3.1-405b-instruct",
+        "meta-llama/llama-3.1-70b-instruct",
+        "meta-llama/llama-3.1-8b-instruct",
+        "meta-llama/llama-3.2-11b-vision-instruct",
+        "meta-llama/llama-3.2-1b-instruct",
+        "meta-llama/llama-3.2-3b-instruct",
+        "meta-llama/llama-3.2-90b-vision-instruct",
+        "meta-llama/llama-3.3-70b-instruct",
+        "meta-llama/llama-3.3-8b-instruct",
+        "meta-llama/llama-4-maverick",
+        "meta-llama/llama-4-maverick-17b-128e-instruct",
+        "meta-llama/llama-4-scout",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
+        "meta-llama/llama-guard-2-8b",
+        "meta-llama/llama-guard-3-8b",
+        "meta-llama/llama-guard-4-12b",
+        "meta-llama/llama-prompt-guard-2-22m",
+        "meta-llama/llama-prompt-guard-2-86m",
+        "meta/llama-3.1-405b-instruct",
+        "meta/llama-3.1-70b-instruct",
+        "meta/llama-3.1-8b-instruct",
+        "meta/llama-3.2-11b-vision-instruct",
+        "meta/llama-3.2-1b-instruct",
+        "meta/llama-3.2-3b-instruct",
+        "meta/llama-3.2-90b-vision-instruct",
+        "meta/llama-3.3-70b-instruct",
+        "meta/llama-4-maverick-17b-128e-instruct",
+        "meta/llama-4-scout-17b-16e-instruct",
+        "meta/llama-guard-4-12b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "llama-3.3-70b-versatile",
+          "api_key_env": "GROQ_API_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "meta-llama/llama-4-scout",
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "meta/llama-guard-4-12b",
+          "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "qwen3",
+      "aliases": [
+        "qwen-qwen3",
+        "qwen/qwen3-14b",
+        "qwen/qwen3-235b-a22b",
+        "qwen/qwen3-235b-a22b-2507",
+        "qwen/qwen3-235b-a22b-thinking-2507",
+        "qwen/qwen3-30b-a3b",
+        "qwen/qwen3-30b-a3b-instruct-2507",
+        "qwen/qwen3-30b-a3b-thinking-2507",
+        "qwen/qwen3-32b",
+        "qwen/qwen3-4b",
+        "qwen/qwen3-8b",
+        "qwen/qwen3-coder",
+        "qwen/qwen3-coder-30b-a3b-instruct",
+        "qwen/qwen3-coder-480b-a35b-instruct",
+        "qwen/qwen3-coder-flash",
+        "qwen/qwen3-coder-plus",
+        "qwen/qwen3-max",
+        "qwen/qwen3-next-80b-a3b-instruct",
+        "qwen/qwen3-next-80b-a3b-thinking",
+        "qwen/qwen3-vl-235b-a22b-instruct",
+        "qwen/qwen3-vl-235b-a22b-thinking",
+        "qwen3",
+        "qwen3-14b",
+        "qwen3-235b-a22b",
+        "qwen3-235b-a22b-2507",
+        "qwen3-235b-a22b-thinking",
+        "qwen3-235b-a22b-thinking-2507",
+        "qwen3-30b-a3b",
+        "qwen3-30b-a3b-2507",
+        "qwen3-30b-a3b-instruct-2507",
+        "qwen3-30b-a3b-thinking",
+        "qwen3-30b-a3b-thinking-2507",
+        "qwen3-32b",
+        "qwen3-4b",
+        "qwen3-8b",
+        "qwen3-coder",
+        "qwen3-coder-30b-a3b",
+        "qwen3-coder-30b-a3b-instruct",
+        "qwen3-coder-480b-a35b",
+        "qwen3-coder-480b-a35b-instruct",
+        "qwen3-coder-flash",
+        "qwen3-coder-plus",
+        "qwen3-max",
+        "qwen3-next-80b-a3b",
+        "qwen3-next-80b-a3b-instruct",
+        "qwen3-next-80b-a3b-thinking",
+        "qwen3-vl-235b-a22b",
+        "qwen3-vl-235b-a22b-instruct",
+        "qwen3-vl-235b-a22b-thinking"
+      ],
+      "providers": {
+        "groq": {
+          "model": "qwen/qwen3-32b",
+          "api_key_env": "GROQ_API_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "qwen/qwen3-4b",
+          "api_key_env": "OPENROUTER_API_KEY",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "qwen/qwen3-235b-a22b",
+          "api_key_env": "NVIDIA_NIM_KEY",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    }
+  ]
+}
