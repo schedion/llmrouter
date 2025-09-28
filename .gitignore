@@ -1,0 +1,29 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.so
+
+# Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+
+# IDE / tooling
+*.swp
+.idea/
+.vscode/
+.DS_Store
+
+# Testing / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Project specific
+config/providers.yaml
