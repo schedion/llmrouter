@@ -13,8 +13,10 @@ COPY requirements.txt ./
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Copy the application code.
+# Copy the application code and catalog assets.
 COPY app ./app
+COPY config ./config
+COPY generated ./generated
 
 EXPOSE 8000
 

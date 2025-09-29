@@ -26,7 +26,10 @@ jobs:
 
       - name: Smoke test container
         run: |
-          docker run -d --rm -p 8000:8000 --name llmrouter-test $IMAGE_NAME:ci-test
+          docker run -d --rm -p 8000:8000 \
+            -e LLMROUTER_MODEL_INDEX_URL="file:///app/generated/model_index.json" \
+            -e LLMROUTER_PROVIDERS="echo" \
+            --name llmrouter-test $IMAGE_NAME:ci-test
           for i in {1..10}; do
             if curl --fail http://localhost:8000/ > /dev/null; then
               break
