@@ -125,17 +125,17 @@ def build_catalog(providers: List[str], seed_models: List[dict]) -> Tuple[List[d
     required = [provider.lower() for provider in providers]
     required_set = set(required)
 
-    availability: Dict[str, List[str]] = {}
+    availability: Dict[str, set[str]] = {}
     if "groq" in required_set:
         LOGGER.info("Fetching Groq model list")
-        availability["groq"] = fetch_groq_models(os.environ[API_KEY_ENV["groq"]])
+        availability["groq"] = set(fetch_groq_models(os.environ[API_KEY_ENV["groq"]]))
     if "openrouter" in required_set:
         LOGGER.info("Fetching OpenRouter model list")
         free_ids, _ = fetch_openrouter_models(os.environ[API_KEY_ENV["openrouter"]])
-        availability["openrouter"] = free_ids
+        availability["openrouter"] = set(free_ids)
     if "nvidia_nim" in required_set:
         LOGGER.info("Fetching NVIDIA NIM model list")
-        availability["nvidia_nim"] = fetch_nvidia_nim_models(os.environ[API_KEY_ENV["nvidia_nim"]])
+        availability["nvidia_nim"] = set(fetch_nvidia_nim_models(os.environ[API_KEY_ENV["nvidia_nim"]]))
 
     entries: List[dict] = []
     for item in seed_models:
@@ -164,6 +164,21 @@ def build_catalog(providers: List[str], seed_models: List[dict]) -> Tuple[List[d
                 )
                 provider_payload = None
                 break
+
+            available_models = availability.get(provider)
+            if available_models is not None:
+                candidate_id = model_id
+                if provider == "openrouter":
+                    candidate_id = _clean_openrouter_identifier(model_id)
+                if candidate_id not in available_models:
+                    LOGGER.warning(
+                        "Skipping '%s' because provider '%s' does not advertise model '%s'",
+                        canonical,
+                        provider,
+                        model_id,
+                    )
+                    provider_payload = None
+                    break
 
             provider_payload[provider] = {
                 "model": model_id,
@@ -218,10 +233,15 @@ def main() -> int:
     seed_models = load_seed()
     entries, availability = build_catalog(providers, seed_models)
 
+    provider_catalogs = {
+        name: sorted(models)
+        for name, models in availability.items()
+    }
+
     payload = {
         "providers": providers,
         "models": entries,
-        "provider_catalogs": availability,
+        "provider_catalogs": provider_catalogs,
     }
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
