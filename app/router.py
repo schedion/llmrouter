@@ -43,7 +43,7 @@ class Router:
         self._cache_ttl = float(os.environ.get("LLMROUTER_CACHE_TTL", "0") or 0)
         self._cache: Dict[str, tuple[ProviderResult, float]] = {}
         self._cache_lock = None
-        self._semantic_enabled = os.environ.get("LLMROUTER_SEMANTIC_CACHE_ENABLED", "true").lower() not in {"0", "false", "off"}
+        self._semantic_enabled = os.environ.get("LLMROUTER_SEMANTIC_CACHE_ENABLED", "false").lower() not in {"0", "false", "off"}
         self._semantic_threshold_default = float(os.environ.get("LLMROUTER_SEMANTIC_CACHE_THRESHOLD", "0.85") or 0.0)
         semantic_model = os.environ.get("LLMROUTER_SEMANTIC_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
         semantic_max_entries = int(os.environ.get("LLMROUTER_SEMANTIC_CACHE_MAX_ENTRIES", "512") or 512)

@@ -43,7 +43,7 @@ curl http://localhost:8000/v1/chat/completions \
 ```
 
 Semantic caching controls:
-- enable/disable globally with `LLMROUTER_SEMANTIC_CACHE_ENABLED` (`true` by default)
+- enable/disable globally with `LLMROUTER_SEMANTIC_CACHE_ENABLED` (`false` by default)
 - override per request using headers:
   - `X-LLMRouter-Semantic-Cache: on|off`
   - `X-LLMRouter-Semantic-Threshold: 0.9`
@@ -66,6 +66,17 @@ A sample Compose file (`docker-compose.sample.yml`) mounts named volumes for con
 ```bash
 docker compose -f docker-compose.sample.yml up -d
 ```
+
+## Publishing to Docker Hub
+- GitHub repository: https://github.com/schedion/llmrouter
+- Docker Hub image: https://hub.docker.com/r/schedion/llmrouter
+
+To let CI push the README to Docker Hub, add these repository secrets/variables:
+- `DOCKERHUB_USERNAME` (secret) – Docker Hub username with write access.
+- `DOCKERHUB_TOKEN` (secret) – Docker Hub access token (write scope).
+- `DOCKERHUB_NAMESPACE` (repository variable) – e.g. `schedion`.
+
+The workflow reuses this README via `peter-evans/dockerhub-description@v4` when changes land on `main`.
 
 ## Development
 ```bash
