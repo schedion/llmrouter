@@ -59,13 +59,3 @@ jobs:
           tags: |
             ${{ env.IMAGE_REPO }}:latest
             ${{ env.IMAGE_REPO }}:${{ github.sha }}
-
-      - name: Update Docker Hub README
-        if: github.event_name == 'push'
-        uses: peter-evans/dockerhub-description@v4
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ vars.DOCKERHUB_NAMESPACE }}/llmrouter
-          short-description: llmrouter multi-provider router
-          readme-filepath: README.md
