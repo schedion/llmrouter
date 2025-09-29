@@ -12,6 +12,7 @@ import httpx
 
 from app.config import ProviderConfig
 from app.schemas import ChatCompletionRequest
+from app.openai_utils import build_openai_request_payload, parse_openai_response_content, parse_openai_tool_calls
 
 DEFAULT_TIMEOUT = httpx.Timeout(30.0)
 
@@ -111,9 +112,7 @@ class GroqProvider(Provider):
             api_key = self._require_api_key()
             url = self.config.base_url or self.DEFAULT_BASE_URL
 
-            request_body = payload.dict(exclude_none=True)
-            if self.config.model:
-                request_body["model"] = self.config.model
+            request_body = build_openai_request_payload(payload, override_model=self.config.model)
 
             headers = {
                 "Authorization": f"Bearer {api_key}",
@@ -130,9 +129,11 @@ class GroqProvider(Provider):
                 )
 
             data = response.json()
+            tool_calls = parse_openai_tool_calls(data)
+            payload.tool_calls = tool_calls  # store on payload for response usage
             try:
-                content = data["choices"][0]["message"]["content"]
-            except (KeyError, IndexError, TypeError) as exc:
+                content = parse_openai_response_content(data)
+            except Exception as exc:  # pragma: no cover - defensive catch
                 raise ProviderError(
                     f"Groq provider {self.config.name} produced unexpected response: {data}"
                 ) from exc
@@ -150,9 +151,7 @@ class OpenRouterProvider(Provider):
             api_key = self._require_api_key()
             url = self.config.base_url or self.DEFAULT_BASE_URL
 
-            request_body = payload.dict(exclude_none=True)
-            if self.config.model:
-                request_body["model"] = self.config.model
+            request_body = build_openai_request_payload(payload, override_model=self.config.model)
 
             headers = {
                 "Authorization": f"Bearer {api_key}",
@@ -169,9 +168,10 @@ class OpenRouterProvider(Provider):
                 )
 
             data = response.json()
+            payload.tool_calls = parse_openai_tool_calls(data)
             try:
-                content = data["choices"][0]["message"]["content"]
-            except (KeyError, IndexError, TypeError) as exc:
+                content = parse_openai_response_content(data)
+            except Exception as exc:  # pragma: no cover - defensive catch
                 raise ProviderError(
                     f"OpenRouter provider {self.config.name} produced unexpected response: {data}"
                 ) from exc
@@ -189,9 +189,7 @@ class NvidiaNimProvider(Provider):
             api_key = self._require_api_key()
             url = self.config.base_url or self.DEFAULT_BASE_URL
 
-            request_body = payload.dict(exclude_none=True)
-            if self.config.model:
-                request_body["model"] = self.config.model
+            request_body = build_openai_request_payload(payload, override_model=self.config.model)
 
             headers = {
                 "Authorization": f"Bearer {api_key}",
@@ -208,9 +206,10 @@ class NvidiaNimProvider(Provider):
                 )
 
             data = response.json()
+            payload.tool_calls = parse_openai_tool_calls(data)
             try:
-                content = data["choices"][0]["message"]["content"]
-            except (KeyError, IndexError, TypeError) as exc:
+                content = parse_openai_response_content(data)
+            except Exception as exc:  # pragma: no cover - defensive catch
                 raise ProviderError(
                     f"NVIDIA NIM provider {self.config.name} produced unexpected response: {data}"
                 ) from exc

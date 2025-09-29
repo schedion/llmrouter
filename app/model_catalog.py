@@ -17,10 +17,10 @@ DEFAULT_MODEL_INDEX_URL = "https://raw.githubusercontent.com/schedion/llmrouter/
 LOCAL_MODEL_INDEX = "config/model_index.json"
 
 PROVIDER_API_KEYS: Dict[str, str] = {
-    "groq": "GROQ_API_KEY",
-    "openrouter": "OPENROUTER_API_KEY",
-    "nvidia_nim": "NVIDIA_NIM_KEY",
-    "huggingface": "HUGGINGFACE_API_TOKEN",
+    "groq": "PROVIDER_KEY_GROQ",
+    "openrouter": "PROVIDER_KEY_OPENROUTER",
+    "nvidia_nim": "PROVIDER_KEY_NVIDIA_NIM",
+    "huggingface": "PROVIDER_KEY_HUGGINGFACE",
 }
 
 # Backward-compatibility alias for scripts that previously imported API_KEY_ENV

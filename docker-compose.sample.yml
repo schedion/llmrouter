@@ -9,20 +9,23 @@ services:
     volumes:
       - llmrouter-config:/app/config
       - llmrouter-generated:/app/generated
+      - llmrouter-hf-cache:/root/.cache/huggingface
     environment:
       # Point to the published catalog JSON (adjust if you host elsewhere)
       LLMROUTER_MODEL_INDEX_URL: "https://raw.githubusercontent.com/schedion/llmrouter/refs/heads/main/generated/model_index.json"
       # Require providers that match the catalog
       LLMROUTER_PROVIDERS: "groq,openrouter,nvidia_nim,huggingface"
       # Inject your own credentials (use Docker secrets or env files in production)
-      GROQ_API_KEY: "replace-me"
-      OPENROUTER_API_KEY: "replace-me"
-      NVIDIA_NIM_KEY: "replace-me"
-      HUGGINGFACE_API_TOKEN: "replace-me"
+      PROVIDER_KEY_GROQ: "replace-me"
+      PROVIDER_KEY_OPENROUTER: "replace-me"
+      PROVIDER_KEY_NVIDIA_NIM: "replace-me"
+      PROVIDER_KEY_HUGGINGFACE: "replace-me"
     restart: unless-stopped
 
 volumes:
   llmrouter-config:
     driver: local
   llmrouter-generated:
+    driver: local
+  llmrouter-hf-cache:
     driver: local

@@ -1,1 +1,637 @@
-{"providers": ["groq", "openrouter", "nvidia_nim", "huggingface"], "models": [{"canonical": "deepseek-r1", "aliases": ["deepseek-r1", "deepseek-r1-distill-llama-70b"], "providers": {"groq": {"model": "deepseek-r1-distill-llama-70b", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "deepseek/deepseek-r1:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "deepseek-ai/deepseek-r1", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "deepseek-ai/DeepSeek-R1", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}, {"canonical": "gpt-oss-120b", "aliases": ["gpt-oss-120b", "openai/gpt-oss-120b"], "providers": {"groq": {"model": "openai/gpt-oss-120b", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "openai/gpt-oss-120b:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "openai/gpt-oss-120b", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "openai/gpt-oss-120b", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}, {"canonical": "gpt-oss-20b", "aliases": ["gpt-oss-20b", "openai/gpt-oss-20b"], "providers": {"groq": {"model": "openai/gpt-oss-20b", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "openai/gpt-oss-20b:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "openai/gpt-oss-20b", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "openai/gpt-oss-20b", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}, {"canonical": "gemma-2-9b-it", "aliases": ["gemma-2-9b-it"], "providers": {"groq": {"model": "gemma2-9b-it", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "google/gemma-2-9b-it:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "google/gemma-2-9b-it", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "google/gemma-2-9b-it", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}, {"canonical": "llama-3.3-70b", "aliases": ["llama-3.3-70b", "meta-llama/llama-3.3-70b"], "providers": {"groq": {"model": "llama-3.3-70b-versatile", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "meta-llama/llama-3.3-70b-instruct:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "meta/llama-3.3-70b-instruct", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "meta-llama/Meta-Llama-3.3-70B-Instruct", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}, {"canonical": "moonshotai-kimi-k2", "aliases": ["moonshotai-kimi-k2", "moonshotai/kimi-k2"], "providers": {"groq": {"model": "moonshotai/kimi-k2-instruct", "api_key_env": "GROQ_API_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "openrouter": {"model": "moonshotai/kimi-k2:free", "api_key_env": "OPENROUTER_API_KEY", "base_url": null, "extra_headers": {"HTTP-Referer": "https://github.com/llmrouter", "X-Title": "llmrouter"}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "nvidia_nim": {"model": "moonshotai/kimi-k2-instruct", "api_key_env": "NVIDIA_NIM_KEY", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}, "huggingface": {"model": "moonshotai/kimi-k2", "api_key_env": "HUGGINGFACE_API_TOKEN", "base_url": null, "extra_headers": {}, "allow_paid": false, "priority_offset": 0, "circuit_breaker": {"failure_threshold": 3, "recovery_time_seconds": 15}, "mock_failure_rate": 0.0}}}], "provider_catalogs": {"groq": ["allam-2-7b", "deepseek-r1-distill-llama-70b", "gemma2-9b-it", "groq/compound", "groq/compound-mini", "llama-3.1-8b-instant", "llama-3.3-70b-versatile", "meta-llama/llama-4-maverick-17b-128e-instruct", "meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-guard-4-12b", "meta-llama/llama-prompt-guard-2-22m", "meta-llama/llama-prompt-guard-2-86m", "moonshotai/kimi-k2-instruct", "moonshotai/kimi-k2-instruct-0905", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "playai-tts", "playai-tts-arabic", "qwen/qwen3-32b", "whisper-large-v3", "whisper-large-v3-turbo"], "openrouter": ["agentica-org/deepcoder-14b-preview", "arliai/qwq-32b-arliai-rpr-v1", "cognitivecomputations/dolphin-mistral-24b-venice-edition", "cognitivecomputations/dolphin3.0-mistral-24b", "cognitivecomputations/dolphin3.0-r1-mistral-24b", "deepseek/deepseek-chat-v3-0324", "deepseek/deepseek-chat-v3.1", "deepseek/deepseek-r1", "deepseek/deepseek-r1-0528", "deepseek/deepseek-r1-0528-qwen3-8b", "deepseek/deepseek-r1-distill-llama-70b", "google/gemini-2.0-flash-exp", "google/gemma-2-9b-it", "google/gemma-3-12b-it", "google/gemma-3-27b-it", "google/gemma-3-4b-it", "google/gemma-3n-e2b-it", "google/gemma-3n-e4b-it", "meta-llama/llama-3.2-3b-instruct", "meta-llama/llama-3.3-70b-instruct", "meta-llama/llama-3.3-8b-instruct", "meta-llama/llama-4-maverick", "meta-llama/llama-4-scout", "microsoft/mai-ds-r1", "mistralai/devstral-small-2505", "mistralai/mistral-7b-instruct", "mistralai/mistral-nemo", "mistralai/mistral-small-24b-instruct-2501", "mistralai/mistral-small-3.1-24b-instruct", "mistralai/mistral-small-3.2-24b-instruct", "moonshotai/kimi-dev-72b", "moonshotai/kimi-k2", "moonshotai/kimi-vl-a3b-thinking", "nousresearch/deephermes-3-llama-3-8b-preview", "nvidia/nemotron-nano-9b-v2", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "qwen/qwen-2.5-72b-instruct", "qwen/qwen-2.5-coder-32b-instruct", "qwen/qwen2.5-vl-32b-instruct", "qwen/qwen2.5-vl-72b-instruct", "qwen/qwen3-14b", "qwen/qwen3-235b-a22b", "qwen/qwen3-30b-a3b", "qwen/qwen3-4b", "qwen/qwen3-8b", "qwen/qwen3-coder", "shisa-ai/shisa-v2-llama3.3-70b", "tencent/hunyuan-a13b-instruct", "tngtech/deepseek-r1t-chimera", "tngtech/deepseek-r1t2-chimera", "x-ai/grok-4-fast", "z-ai/glm-4.5-air"], "nvidia_nim": ["01-ai/yi-large", "abacusai/dracarys-llama-3.1-70b-instruct", "adept/fuyu-8b", "ai21labs/jamba-1.5-large-instruct", "ai21labs/jamba-1.5-mini-instruct", "aisingapore/sea-lion-7b-instruct", "baai/bge-m3", "baichuan-inc/baichuan2-13b-chat", "bigcode/starcoder2-15b", "bigcode/starcoder2-7b", "bytedance/seed-oss-36b-instruct", "databricks/dbrx-instruct", "deepseek-ai/deepseek-coder-6.7b-instruct", "deepseek-ai/deepseek-r1", "deepseek-ai/deepseek-r1-0528", "deepseek-ai/deepseek-r1-distill-llama-8b", "deepseek-ai/deepseek-r1-distill-qwen-14b", "deepseek-ai/deepseek-r1-distill-qwen-32b", "deepseek-ai/deepseek-r1-distill-qwen-7b", "deepseek-ai/deepseek-v3.1", "google/codegemma-1.1-7b", "google/codegemma-7b", "google/deplot", "google/gemma-2-27b-it", "google/gemma-2-2b-it", "google/gemma-2-9b-it", "google/gemma-2b", "google/gemma-3-12b-it", "google/gemma-3-1b-it", "google/gemma-3-27b-it", "google/gemma-3-4b-it", "google/gemma-3n-e2b-it", "google/gemma-3n-e4b-it", "google/gemma-7b", "google/paligemma", "google/recurrentgemma-2b", "google/shieldgemma-9b", "gotocompany/gemma-2-9b-cpt-sahabatai-instruct", "ibm/granite-3.0-3b-a800m-instruct", "ibm/granite-3.0-8b-instruct", "ibm/granite-3.3-8b-instruct", "ibm/granite-34b-code-instruct", "ibm/granite-8b-code-instruct", "ibm/granite-guardian-3.0-8b", "igenius/colosseum_355b_instruct_16k", "igenius/italia_10b_instruct_16k", "institute-of-science-tokyo/llama-3.1-swallow-70b-instruct-v0.1", "institute-of-science-tokyo/llama-3.1-swallow-8b-instruct-v0.1", "marin/marin-8b-instruct", "mediatek/breeze-7b-instruct", "meta/codellama-70b", "meta/llama-3.1-405b-instruct", "meta/llama-3.1-70b-instruct", "meta/llama-3.1-8b-instruct", "meta/llama-3.2-11b-vision-instruct", "meta/llama-3.2-1b-instruct", "meta/llama-3.2-3b-instruct", "meta/llama-3.2-90b-vision-instruct", "meta/llama-3.3-70b-instruct", "meta/llama-4-maverick-17b-128e-instruct", "meta/llama-4-scout-17b-16e-instruct", "meta/llama-guard-4-12b", "meta/llama2-70b", "meta/llama3-70b-instruct", "meta/llama3-8b-instruct", "microsoft/kosmos-2", "microsoft/phi-3-medium-128k-instruct", "microsoft/phi-3-medium-4k-instruct", "microsoft/phi-3-mini-128k-instruct", "microsoft/phi-3-mini-4k-instruct", "microsoft/phi-3-small-128k-instruct", "microsoft/phi-3-small-8k-instruct", "microsoft/phi-3-vision-128k-instruct", "microsoft/phi-3.5-mini-instruct", "microsoft/phi-3.5-moe-instruct", "microsoft/phi-3.5-vision-instruct", "microsoft/phi-4-mini-flash-reasoning", "microsoft/phi-4-mini-instruct", "microsoft/phi-4-multimodal-instruct", "mistralai/codestral-22b-instruct-v0.1", "mistralai/magistral-small-2506", "mistralai/mamba-codestral-7b-v0.1", "mistralai/mathstral-7b-v0.1", "mistralai/mistral-7b-instruct-v0.2", "mistralai/mistral-7b-instruct-v0.3", "mistralai/mistral-large", "mistralai/mistral-large-2-instruct", "mistralai/mistral-medium-3-instruct", "mistralai/mistral-nemotron", "mistralai/mistral-small-24b-instruct", "mistralai/mistral-small-3.1-24b-instruct-2503", "mistralai/mixtral-8x22b-instruct-v0.1", "mistralai/mixtral-8x22b-v0.1", "mistralai/mixtral-8x7b-instruct-v0.1", "moonshotai/kimi-k2-instruct", "moonshotai/kimi-k2-instruct-0905", "nv-mistralai/mistral-nemo-12b-instruct", "nvidia/embed-qa-4", "nvidia/llama-3.1-nemoguard-8b-content-safety", "nvidia/llama-3.1-nemoguard-8b-topic-control", "nvidia/llama-3.1-nemotron-51b-instruct", "nvidia/llama-3.1-nemotron-70b-instruct", "nvidia/llama-3.1-nemotron-70b-reward", "nvidia/llama-3.1-nemotron-nano-4b-v1.1", "nvidia/llama-3.1-nemotron-nano-8b-v1", "nvidia/llama-3.1-nemotron-nano-vl-8b-v1", "nvidia/llama-3.1-nemotron-ultra-253b-v1", "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1", "nvidia/llama-3.2-nemoretriever-300m-embed-v1", "nvidia/llama-3.2-nv-embedqa-1b-v1", "nvidia/llama-3.2-nv-embedqa-1b-v2", "nvidia/llama-3.3-nemotron-super-49b-v1", "nvidia/llama-3.3-nemotron-super-49b-v1.5", "nvidia/llama3-chatqa-1.5-70b", "nvidia/llama3-chatqa-1.5-8b", "nvidia/mistral-nemo-minitron-8b-8k-instruct", "nvidia/mistral-nemo-minitron-8b-base", "nvidia/nemoretriever-parse", "nvidia/nemotron-4-340b-instruct", "nvidia/nemotron-4-340b-reward", "nvidia/nemotron-4-mini-hindi-4b-instruct", "nvidia/nemotron-mini-4b-instruct", "nvidia/neva-22b", "nvidia/nv-embed-v1", "nvidia/nv-embedcode-7b-v1", "nvidia/nv-embedqa-e5-v5", "nvidia/nv-embedqa-mistral-7b-v2", "nvidia/nvclip", "nvidia/nvidia-nemotron-nano-9b-v2", "nvidia/riva-translate-4b-instruct", "nvidia/usdcode-llama-3.1-70b-instruct", "nvidia/vila", "openai/gpt-oss-120b", "openai/gpt-oss-20b", "opengpt-x/teuken-7b-instruct-commercial-v0.4", "qwen/qwen2-7b-instruct", "qwen/qwen2.5-7b-instruct", "qwen/qwen2.5-coder-32b-instruct", "qwen/qwen2.5-coder-7b-instruct", "qwen/qwen3-235b-a22b", "qwen/qwen3-coder-480b-a35b-instruct", "qwen/qwen3-next-80b-a3b-instruct", "qwen/qwen3-next-80b-a3b-thinking", "qwen/qwq-32b", "rakuten/rakutenai-7b-chat", "rakuten/rakutenai-7b-instruct", "sarvamai/sarvam-m", "snowflake/arctic-embed-l", "speakleash/bielik-11b-v2.3-instruct", "speakleash/bielik-11b-v2.6-instruct", "stockmark/stockmark-2-100b-instruct", "thudm/chatglm3-6b", "tiiuae/falcon3-7b-instruct", "tokyotech-llm/llama-3-swallow-70b-instruct-v0.1", "upstage/solar-10.7b-instruct", "utter-project/eurollm-9b-instruct", "writer/palmyra-creative-122b", "writer/palmyra-fin-70b-32k", "writer/palmyra-med-70b", "writer/palmyra-med-70b-32k", "yentinglin/llama-3-taiwan-70b-instruct", "zyphra/zamba2-7b-instruct"]}}
+{
+  "providers": [
+    "groq",
+    "openrouter",
+    "nvidia_nim",
+    "huggingface"
+  ],
+  "models": [
+    {
+      "canonical": "deepseek-r1",
+      "aliases": [
+        "deepseek-r1",
+        "deepseek-r1-distill-llama-70b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "deepseek-r1-distill-llama-70b",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "deepseek/deepseek-r1:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "deepseek-ai/deepseek-r1",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "deepseek-ai/DeepSeek-R1",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "gpt-oss-120b",
+      "aliases": [
+        "gpt-oss-120b",
+        "openai/gpt-oss-120b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "openai/gpt-oss-120b",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "openai/gpt-oss-120b:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "openai/gpt-oss-120b",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "openai/gpt-oss-120b",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "gpt-oss-20b",
+      "aliases": [
+        "gpt-oss-20b",
+        "openai/gpt-oss-20b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "openai/gpt-oss-20b:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "openai/gpt-oss-20b",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "gemma-2-9b-it",
+      "aliases": [
+        "gemma-2-9b-it"
+      ],
+      "providers": {
+        "groq": {
+          "model": "gemma2-9b-it",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "google/gemma-2-9b-it:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "google/gemma-2-9b-it",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "google/gemma-2-9b-it",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "llama-3.3-70b",
+      "aliases": [
+        "llama-3.3-70b",
+        "meta-llama/llama-3.3-70b"
+      ],
+      "providers": {
+        "groq": {
+          "model": "llama-3.3-70b-versatile",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "meta-llama/llama-3.3-70b-instruct:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "meta/llama-3.3-70b-instruct",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "meta-llama/Meta-Llama-3.3-70B-Instruct",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    },
+    {
+      "canonical": "moonshotai-kimi-k2",
+      "aliases": [
+        "moonshotai-kimi-k2",
+        "moonshotai/kimi-k2"
+      ],
+      "providers": {
+        "groq": {
+          "model": "moonshotai/kimi-k2-instruct",
+          "api_key_env": "PROVIDER_KEY_GROQ",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "openrouter": {
+          "model": "moonshotai/kimi-k2:free",
+          "api_key_env": "PROVIDER_KEY_OPENROUTER",
+          "base_url": null,
+          "extra_headers": {
+            "HTTP-Referer": "https://github.com/llmrouter",
+            "X-Title": "llmrouter"
+          },
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "nvidia_nim": {
+          "model": "moonshotai/kimi-k2-instruct",
+          "api_key_env": "PROVIDER_KEY_NVIDIA_NIM",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        },
+        "huggingface": {
+          "model": "moonshotai/kimi-k2",
+          "api_key_env": "PROVIDER_KEY_HUGGINGFACE",
+          "base_url": null,
+          "extra_headers": {},
+          "allow_paid": false,
+          "priority_offset": 0,
+          "circuit_breaker": {
+            "failure_threshold": 3,
+            "recovery_time_seconds": 15
+          },
+          "mock_failure_rate": 0.0
+        }
+      }
+    }
+  ],
+  "provider_catalogs": {
+    "groq": [
+      "allam-2-7b",
+      "deepseek-r1-distill-llama-70b",
+      "gemma2-9b-it",
+      "groq/compound",
+      "groq/compound-mini",
+      "llama-3.1-8b-instant",
+      "llama-3.3-70b-versatile",
+      "meta-llama/llama-4-maverick-17b-128e-instruct",
+      "meta-llama/llama-4-scout-17b-16e-instruct",
+      "meta-llama/llama-guard-4-12b",
+      "meta-llama/llama-prompt-guard-2-22m",
+      "meta-llama/llama-prompt-guard-2-86m",
+      "moonshotai/kimi-k2-instruct",
+      "moonshotai/kimi-k2-instruct-0905",
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "playai-tts",
+      "playai-tts-arabic",
+      "qwen/qwen3-32b",
+      "whisper-large-v3",
+      "whisper-large-v3-turbo"
+    ],
+    "openrouter": [
+      "agentica-org/deepcoder-14b-preview",
+      "arliai/qwq-32b-arliai-rpr-v1",
+      "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+      "cognitivecomputations/dolphin3.0-mistral-24b",
+      "cognitivecomputations/dolphin3.0-r1-mistral-24b",
+      "deepseek/deepseek-chat-v3-0324",
+      "deepseek/deepseek-chat-v3.1",
+      "deepseek/deepseek-r1",
+      "deepseek/deepseek-r1-0528",
+      "deepseek/deepseek-r1-0528-qwen3-8b",
+      "deepseek/deepseek-r1-distill-llama-70b",
+      "google/gemini-2.0-flash-exp",
+      "google/gemma-2-9b-it",
+      "google/gemma-3-12b-it",
+      "google/gemma-3-27b-it",
+      "google/gemma-3-4b-it",
+      "google/gemma-3n-e2b-it",
+      "google/gemma-3n-e4b-it",
+      "meta-llama/llama-3.2-3b-instruct",
+      "meta-llama/llama-3.3-70b-instruct",
+      "meta-llama/llama-3.3-8b-instruct",
+      "meta-llama/llama-4-maverick",
+      "meta-llama/llama-4-scout",
+      "microsoft/mai-ds-r1",
+      "mistralai/devstral-small-2505",
+      "mistralai/mistral-7b-instruct",
+      "mistralai/mistral-nemo",
+      "mistralai/mistral-small-24b-instruct-2501",
+      "mistralai/mistral-small-3.1-24b-instruct",
+      "mistralai/mistral-small-3.2-24b-instruct",
+      "moonshotai/kimi-dev-72b",
+      "moonshotai/kimi-k2",
+      "moonshotai/kimi-vl-a3b-thinking",
+      "nousresearch/deephermes-3-llama-3-8b-preview",
+      "nvidia/nemotron-nano-9b-v2",
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "qwen/qwen-2.5-72b-instruct",
+      "qwen/qwen-2.5-coder-32b-instruct",
+      "qwen/qwen2.5-vl-32b-instruct",
+      "qwen/qwen2.5-vl-72b-instruct",
+      "qwen/qwen3-14b",
+      "qwen/qwen3-235b-a22b",
+      "qwen/qwen3-30b-a3b",
+      "qwen/qwen3-4b",
+      "qwen/qwen3-8b",
+      "qwen/qwen3-coder",
+      "shisa-ai/shisa-v2-llama3.3-70b",
+      "tencent/hunyuan-a13b-instruct",
+      "tngtech/deepseek-r1t-chimera",
+      "tngtech/deepseek-r1t2-chimera",
+      "x-ai/grok-4-fast",
+      "z-ai/glm-4.5-air"
+    ],
+    "nvidia_nim": [
+      "01-ai/yi-large",
+      "abacusai/dracarys-llama-3.1-70b-instruct",
+      "adept/fuyu-8b",
+      "ai21labs/jamba-1.5-large-instruct",
+      "ai21labs/jamba-1.5-mini-instruct",
+      "aisingapore/sea-lion-7b-instruct",
+      "baai/bge-m3",
+      "baichuan-inc/baichuan2-13b-chat",
+      "bigcode/starcoder2-15b",
+      "bigcode/starcoder2-7b",
+      "bytedance/seed-oss-36b-instruct",
+      "databricks/dbrx-instruct",
+      "deepseek-ai/deepseek-coder-6.7b-instruct",
+      "deepseek-ai/deepseek-r1",
+      "deepseek-ai/deepseek-r1-0528",
+      "deepseek-ai/deepseek-r1-distill-llama-8b",
+      "deepseek-ai/deepseek-r1-distill-qwen-14b",
+      "deepseek-ai/deepseek-r1-distill-qwen-32b",
+      "deepseek-ai/deepseek-r1-distill-qwen-7b",
+      "deepseek-ai/deepseek-v3.1",
+      "google/codegemma-1.1-7b",
+      "google/codegemma-7b",
+      "google/deplot",
+      "google/gemma-2-27b-it",
+      "google/gemma-2-2b-it",
+      "google/gemma-2-9b-it",
+      "google/gemma-2b",
+      "google/gemma-3-12b-it",
+      "google/gemma-3-1b-it",
+      "google/gemma-3-27b-it",
+      "google/gemma-3-4b-it",
+      "google/gemma-3n-e2b-it",
+      "google/gemma-3n-e4b-it",
+      "google/gemma-7b",
+      "google/paligemma",
+      "google/recurrentgemma-2b",
+      "google/shieldgemma-9b",
+      "gotocompany/gemma-2-9b-cpt-sahabatai-instruct",
+      "ibm/granite-3.0-3b-a800m-instruct",
+      "ibm/granite-3.0-8b-instruct",
+      "ibm/granite-3.3-8b-instruct",
+      "ibm/granite-34b-code-instruct",
+      "ibm/granite-8b-code-instruct",
+      "ibm/granite-guardian-3.0-8b",
+      "igenius/colosseum_355b_instruct_16k",
+      "igenius/italia_10b_instruct_16k",
+      "institute-of-science-tokyo/llama-3.1-swallow-70b-instruct-v0.1",
+      "institute-of-science-tokyo/llama-3.1-swallow-8b-instruct-v0.1",
+      "marin/marin-8b-instruct",
+      "mediatek/breeze-7b-instruct",
+      "meta/codellama-70b",
+      "meta/llama-3.1-405b-instruct",
+      "meta/llama-3.1-70b-instruct",
+      "meta/llama-3.1-8b-instruct",
+      "meta/llama-3.2-11b-vision-instruct",
+      "meta/llama-3.2-1b-instruct",
+      "meta/llama-3.2-3b-instruct",
+      "meta/llama-3.2-90b-vision-instruct",
+      "meta/llama-3.3-70b-instruct",
+      "meta/llama-4-maverick-17b-128e-instruct",
+      "meta/llama-4-scout-17b-16e-instruct",
+      "meta/llama-guard-4-12b",
+      "meta/llama2-70b",
+      "meta/llama3-70b-instruct",
+      "meta/llama3-8b-instruct",
+      "microsoft/kosmos-2",
+      "microsoft/phi-3-medium-128k-instruct",
+      "microsoft/phi-3-medium-4k-instruct",
+      "microsoft/phi-3-mini-128k-instruct",
+      "microsoft/phi-3-mini-4k-instruct",
+      "microsoft/phi-3-small-128k-instruct",
+      "microsoft/phi-3-small-8k-instruct",
+      "microsoft/phi-3-vision-128k-instruct",
+      "microsoft/phi-3.5-mini-instruct",
+      "microsoft/phi-3.5-moe-instruct",
+      "microsoft/phi-3.5-vision-instruct",
+      "microsoft/phi-4-mini-flash-reasoning",
+      "microsoft/phi-4-mini-instruct",
+      "microsoft/phi-4-multimodal-instruct",
+      "mistralai/codestral-22b-instruct-v0.1",
+      "mistralai/magistral-small-2506",
+      "mistralai/mamba-codestral-7b-v0.1",
+      "mistralai/mathstral-7b-v0.1",
+      "mistralai/mistral-7b-instruct-v0.2",
+      "mistralai/mistral-7b-instruct-v0.3",
+      "mistralai/mistral-large",
+      "mistralai/mistral-large-2-instruct",
+      "mistralai/mistral-medium-3-instruct",
+      "mistralai/mistral-nemotron",
+      "mistralai/mistral-small-24b-instruct",
+      "mistralai/mistral-small-3.1-24b-instruct-2503",
+      "mistralai/mixtral-8x22b-instruct-v0.1",
+      "mistralai/mixtral-8x22b-v0.1",
+      "mistralai/mixtral-8x7b-instruct-v0.1",
+      "moonshotai/kimi-k2-instruct",
+      "moonshotai/kimi-k2-instruct-0905",
+      "nv-mistralai/mistral-nemo-12b-instruct",
+      "nvidia/embed-qa-4",
+      "nvidia/llama-3.1-nemoguard-8b-content-safety",
+      "nvidia/llama-3.1-nemoguard-8b-topic-control",
+      "nvidia/llama-3.1-nemotron-51b-instruct",
+      "nvidia/llama-3.1-nemotron-70b-instruct",
+      "nvidia/llama-3.1-nemotron-70b-reward",
+      "nvidia/llama-3.1-nemotron-nano-4b-v1.1",
+      "nvidia/llama-3.1-nemotron-nano-8b-v1",
+      "nvidia/llama-3.1-nemotron-nano-vl-8b-v1",
+      "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+      "nvidia/llama-3.2-nemoretriever-1b-vlm-embed-v1",
+      "nvidia/llama-3.2-nemoretriever-300m-embed-v1",
+      "nvidia/llama-3.2-nv-embedqa-1b-v1",
+      "nvidia/llama-3.2-nv-embedqa-1b-v2",
+      "nvidia/llama-3.3-nemotron-super-49b-v1",
+      "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "nvidia/llama3-chatqa-1.5-70b",
+      "nvidia/llama3-chatqa-1.5-8b",
+      "nvidia/mistral-nemo-minitron-8b-8k-instruct",
+      "nvidia/mistral-nemo-minitron-8b-base",
+      "nvidia/nemoretriever-parse",
+      "nvidia/nemotron-4-340b-instruct",
+      "nvidia/nemotron-4-340b-reward",
+      "nvidia/nemotron-4-mini-hindi-4b-instruct",
+      "nvidia/nemotron-mini-4b-instruct",
+      "nvidia/neva-22b",
+      "nvidia/nv-embed-v1",
+      "nvidia/nv-embedcode-7b-v1",
+      "nvidia/nv-embedqa-e5-v5",
+      "nvidia/nv-embedqa-mistral-7b-v2",
+      "nvidia/nvclip",
+      "nvidia/nvidia-nemotron-nano-9b-v2",
+      "nvidia/riva-translate-4b-instruct",
+      "nvidia/usdcode-llama-3.1-70b-instruct",
+      "nvidia/vila",
+      "openai/gpt-oss-120b",
+      "openai/gpt-oss-20b",
+      "opengpt-x/teuken-7b-instruct-commercial-v0.4",
+      "qwen/qwen2-7b-instruct",
+      "qwen/qwen2.5-7b-instruct",
+      "qwen/qwen2.5-coder-32b-instruct",
+      "qwen/qwen2.5-coder-7b-instruct",
+      "qwen/qwen3-235b-a22b",
+      "qwen/qwen3-coder-480b-a35b-instruct",
+      "qwen/qwen3-next-80b-a3b-instruct",
+      "qwen/qwen3-next-80b-a3b-thinking",
+      "qwen/qwq-32b",
+      "rakuten/rakutenai-7b-chat",
+      "rakuten/rakutenai-7b-instruct",
+      "sarvamai/sarvam-m",
+      "snowflake/arctic-embed-l",
+      "speakleash/bielik-11b-v2.3-instruct",
+      "speakleash/bielik-11b-v2.6-instruct",
+      "stockmark/stockmark-2-100b-instruct",
+      "thudm/chatglm3-6b",
+      "tiiuae/falcon3-7b-instruct",
+      "tokyotech-llm/llama-3-swallow-70b-instruct-v0.1",
+      "upstage/solar-10.7b-instruct",
+      "utter-project/eurollm-9b-instruct",
+      "writer/palmyra-creative-122b",
+      "writer/palmyra-fin-70b-32k",
+      "writer/palmyra-med-70b",
+      "writer/palmyra-med-70b-32k",
+      "yentinglin/llama-3-taiwan-70b-instruct",
+      "zyphra/zamba2-7b-instruct"
+    ]
+  }
+}

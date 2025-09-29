@@ -16,6 +16,7 @@ def _default_model() -> str:
 class Message(BaseModel):
     role: str
     content: str
+    tool_calls: Optional[List["ToolCall"]] = None
 
     @validator("role")
     def validate_role(cls, value: str) -> str:  # noqa: N805 (pydantic validator signature)
@@ -25,11 +26,36 @@ class Message(BaseModel):
         return value
 
 
+class ToolFunction(BaseModel):
+    name: str
+    description: Optional[str] = None
+    parameters: Dict[str, Any]
+
+
+class ToolDefinition(BaseModel):
+    type: str = "function"
+    function: ToolFunction
+
+
+class ToolCallFunction(BaseModel):
+    name: str
+    arguments: str
+
+
+class ToolCall(BaseModel):
+    id: str
+    type: str = "function"
+    function: ToolCallFunction
+
+
 class ChatCompletionRequest(BaseModel):
     model: str = Field(default_factory=_default_model)
     messages: List[Message]
     temperature: Optional[float] = 1.0
+    top_p: Optional[float] = 1.0
     max_tokens: Optional[int] = None
+    tools: Optional[List[ToolDefinition]] = None
+    tool_choice: Optional[Dict[str, Any]] = None
 
     @validator("messages")
     def validate_messages(cls, value: List[Message]) -> List[Message]:  # noqa: N805
@@ -41,6 +67,7 @@ class ChatCompletionRequest(BaseModel):
 class ChoiceMessage(BaseModel):
     role: str
     content: str
+    tool_calls: Optional[List[ToolCall]] = None
 
 
 class Choice(BaseModel):

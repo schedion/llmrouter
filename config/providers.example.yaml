@@ -18,7 +18,7 @@ providers:
     type: huggingface
     priority: 10
     model: mistralai/Mixtral-8x7B-Instruct-v0.1
-    api_key_env: HUGGINGFACE_API_TOKEN
+    api_key_env: PROVIDER_KEY_HUGGINGFACE
     circuit_breaker:
       failure_threshold: 3
       recovery_time_seconds: 30
@@ -27,7 +27,7 @@ providers:
     type: groq
     priority: 20
     model: mixtral-8x7b-32768
-    api_key_env: GROQ_API_KEY
+    api_key_env: PROVIDER_KEY_GROQ
     circuit_breaker:
       failure_threshold: 3
       recovery_time_seconds: 15
@@ -36,7 +36,7 @@ providers:
     type: openrouter
     priority: 30
     model: meta-llama/llama-3-70b-instruct
-    api_key_env: OPENROUTER_API_KEY
+    api_key_env: PROVIDER_KEY_OPENROUTER
     extra_headers:
       HTTP-Referer: https://your-app.example.com
       X-Title: llmrouter

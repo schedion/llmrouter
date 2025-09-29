@@ -16,10 +16,10 @@ import yaml
 LOGGER = logging.getLogger("build_catalog")
 
 API_KEY_ENV = {
-    "groq": "GROQ_API_KEY",
-    "openrouter": "OPENROUTER_API_KEY",
-    "nvidia_nim": "NVIDIA_NIM_KEY",
-    "huggingface": "HUGGINGFACE_API_TOKEN",
+    "groq": "PROVIDER_KEY_GROQ",
+    "openrouter": "PROVIDER_KEY_OPENROUTER",
+    "nvidia_nim": "PROVIDER_KEY_NVIDIA_NIM",
+    "huggingface": "PROVIDER_KEY_HUGGINGFACE",
 }
 
 DEFAULT_BREAKER = {"failure_threshold": 3, "recovery_time_seconds": 15}

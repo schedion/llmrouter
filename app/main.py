@@ -6,7 +6,7 @@ import logging
 import os
 import time
 
-from typing import Any, Dict
+from typing import Any, Dict, List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 
@@ -17,6 +17,7 @@ from app.schemas import (
     ChatCompletionResponse,
     Choice,
     ChoiceMessage,
+    ToolCall,
     Usage,
 )
 
@@ -29,6 +30,7 @@ def _build_response(
     provider_name: str,
     payload: ChatCompletionRequest,
     content: str,
+    tool_calls: Optional[List[ToolCall]],
 ) -> ChatCompletionResponse:
     completion_tokens = max(1, len(content.split()))
     usage = Usage(
@@ -42,7 +44,7 @@ def _build_response(
         choices=[
             Choice(
                 index=0,
-                message=ChoiceMessage(role="assistant", content=content),
+                message=ChoiceMessage(role="assistant", content=content, tool_calls=tool_calls or None),
                 finish_reason="stop",
             )
         ],
@@ -87,6 +89,7 @@ async def list_models(router: Router = Depends(_get_router)) -> Dict[str, Any]:
 @app.post("/v1/chat/completions", response_model=ChatCompletionResponse)
 async def create_chat_completion(
     payload: ChatCompletionRequest,
+    request: Request,
     router: Router = Depends(_get_router),
 ) -> ChatCompletionResponse:
     """Route chat completion requests through the configured providers."""
@@ -95,13 +98,39 @@ async def create_chat_completion(
     if not user_messages:
         raise HTTPException(status_code=400, detail="At least one user message is required")
 
+    semantic_threshold_header = request.headers.get("X-LLMRouter-Semantic-Threshold")
+    semantic_threshold = None
+    if semantic_threshold_header:
+        try:
+            semantic_threshold = float(semantic_threshold_header)
+        except ValueError:
+            semantic_threshold = None
+
+    semantic_toggle_header = request.headers.get("X-LLMRouter-Semantic-Cache")
+    semantic_enabled = None
+    if semantic_toggle_header:
+        value = semantic_toggle_header.strip().lower()
+        if value in {"false", "off", "0"}:
+            semantic_enabled = False
+        elif value in {"true", "on", "1"}:
+            semantic_enabled = True
+
     try:
-        provider_result = await router.chat_completion(payload)
+        provider_result = await router.chat_completion(
+            payload,
+            semantic_threshold=semantic_threshold,
+            semantic_enabled=semantic_enabled,
+        )
     except NoAvailableProviderError as exc:
         logger.error("Routing failed: %s", exc)
         raise HTTPException(status_code=503, detail=str(exc)) from exc
 
-    return _build_response(provider_result.provider_name, payload, provider_result.content)
+    return _build_response(
+        provider_result.provider_name,
+        payload,
+        provider_result.content,
+        provider_result.tool_calls,
+    )
 
 
 if __name__ == "__main__":
