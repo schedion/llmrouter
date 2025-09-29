@@ -11,9 +11,10 @@ jobs:
     timeout-minutes: 20
 
     env:
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      NVIDIA_NIM_KEY: ${{ secrets.NVIDIA_NIM_KEY }}
+      PROVIDER_KEY_GROQ: ${{ secrets.PROVIDER_KEY_GROQ }}
+      PROVIDER_KEY_OPENROUTER: ${{ secrets.PROVIDER_KEY_OPENROUTER }}
+      PROVIDER_KEY_NVIDIA_NIM: ${{ secrets.PROVIDER_KEY_NVIDIA_NIM }}
+      PROVIDER_KEY_HUGGINGFACE: ${{ secrets.PROVIDER_KEY_HUGGINGFACE }}
 
     steps:
       - uses: actions/checkout@v4

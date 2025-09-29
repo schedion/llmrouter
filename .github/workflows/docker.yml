@@ -3,7 +3,11 @@ name: Build and Publish Docker Image
 on:
   push:
     branches: ["main"]
+    paths-ignore:
+      - 'generated/model_index.json'
   pull_request:
+    paths-ignore:
+      - 'generated/model_index.json'
 
 jobs:
   docker:
