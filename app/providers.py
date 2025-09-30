@@ -7,10 +7,12 @@ import os
 import random
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from time import perf_counter
 
 import httpx
 
 from app.config import ProviderConfig
+from app.metrics import record_provider_error, record_provider_http
 from app.schemas import ChatCompletionRequest
 from app.openai_utils import build_openai_request_payload, parse_openai_response_content, parse_openai_tool_calls
 
@@ -44,9 +46,11 @@ class Provider(ABC):
 
     def _require_api_key(self) -> str:
         if not self.config.api_key_env:
+            record_provider_error(self.config.type, "missing_api_key_env")
             raise ProviderError(f"Provider {self.config.name} requires 'api_key_env' in config")
         api_key = os.environ.get(self.config.api_key_env)
         if not api_key:
+            record_provider_error(self.config.type, "missing_api_key")
             raise ProviderError(
                 f"Environment variable '{self.config.api_key_env}' is not set for provider {self.config.name}"
             )
@@ -67,6 +71,7 @@ class HuggingFaceProvider(Provider):
             _simulate_failure(self.config)
 
             if not self.config.model:
+                record_provider_error(self.config.type, "missing_model")
                 raise ProviderError(f"Provider {self.config.name} requires a 'model' value")
 
             api_key = self._require_api_key()
@@ -79,7 +84,15 @@ class HuggingFaceProvider(Provider):
             }
 
             async with httpx.AsyncClient(timeout=DEFAULT_TIMEOUT) as client:
-                response = await client.post(url, headers=headers, json=payload_body)
+                start = perf_counter()
+                try:
+                    response = await client.post(url, headers=headers, json=payload_body)
+                except httpx.HTTPError as exc:
+                    record_provider_error(self.config.type, exc.__class__.__name__)
+                    raise
+                duration = perf_counter() - start
+
+            record_provider_http(self.config.type, response.status_code, duration)
 
             if response.status_code >= 400:
                 raise ProviderError(
@@ -95,6 +108,7 @@ class HuggingFaceProvider(Provider):
                 generated_text = data.get("generated_text")
 
             if not generated_text:
+                record_provider_error(self.config.type, "empty_payload")
                 raise ProviderError(
                     f"Hugging Face provider {self.config.name} returned no generated_text payload: {data}"
                 )
@@ -121,7 +135,15 @@ class GroqProvider(Provider):
             }
 
             async with httpx.AsyncClient(timeout=DEFAULT_TIMEOUT) as client:
-                response = await client.post(url, headers=headers, json=request_body)
+                start = perf_counter()
+                try:
+                    response = await client.post(url, headers=headers, json=request_body)
+                except httpx.HTTPError as exc:
+                    record_provider_error(self.config.type, exc.__class__.__name__)
+                    raise
+                duration = perf_counter() - start
+
+            record_provider_http(self.config.type, response.status_code, duration)
 
             if response.status_code >= 400:
                 raise ProviderError(
@@ -160,7 +182,15 @@ class OpenRouterProvider(Provider):
             }
 
             async with httpx.AsyncClient(timeout=DEFAULT_TIMEOUT) as client:
-                response = await client.post(url, headers=headers, json=request_body)
+                start = perf_counter()
+                try:
+                    response = await client.post(url, headers=headers, json=request_body)
+                except httpx.HTTPError as exc:
+                    record_provider_error(self.config.type, exc.__class__.__name__)
+                    raise
+                duration = perf_counter() - start
+
+            record_provider_http(self.config.type, response.status_code, duration)
 
             if response.status_code >= 400:
                 raise ProviderError(
@@ -198,7 +228,15 @@ class NvidiaNimProvider(Provider):
             }
 
             async with httpx.AsyncClient(timeout=DEFAULT_TIMEOUT) as client:
-                response = await client.post(url, headers=headers, json=request_body)
+                start = perf_counter()
+                try:
+                    response = await client.post(url, headers=headers, json=request_body)
+                except httpx.HTTPError as exc:
+                    record_provider_error(self.config.type, exc.__class__.__name__)
+                    raise
+                duration = perf_counter() - start
+
+            record_provider_http(self.config.type, response.status_code, duration)
 
             if response.status_code >= 400:
                 raise ProviderError(

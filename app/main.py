@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Optional
 from fastapi import Depends, FastAPI, HTTPException, Request
 
 from app.config import load_router_config
+from app.metrics import metrics_middleware, router as metrics_router
 from app.router import NoAvailableProviderError, Router
 from app.schemas import (
     ChatCompletionRequest,
@@ -24,6 +25,12 @@ from app.schemas import (
 logger = logging.getLogger(__name__)
 
 app = FastAPI(title="llmrouter", version="0.1.0")
+app.include_router(metrics_router)
+
+
+@app.middleware("http")
+async def _metrics_middleware(request: Request, call_next):
+    return await metrics_middleware(request, call_next)
 
 
 def _build_response(
@@ -44,7 +51,7 @@ def _build_response(
         choices=[
             Choice(
                 index=0,
-                message=ChoiceMessage(role="assistant", content=content, tool_calls=tool_calls or None),
+                message=ChoiceMessage(role="assistant", content=content, tool_calls=tool_calls or []),
                 finish_reason="stop",
             )
         ],

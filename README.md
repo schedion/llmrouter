@@ -76,6 +76,10 @@ Published images:
 
 For the `arm/v7` build we pull Python wheels from [piwheels.org](https://piwheels.org); if you build locally on a Raspberry Pi, keep the same extra index (`PIP_EXTRA_INDEX_URL=https://www.piwheels.org/simple`) to avoid compiling NumPy from source.
 
+### Observability
+- Prometheus metrics are exposed at `/metrics` (suitable for scraping).
+- A lightweight HTML dashboard at `/metrics/dashboard` summarises API traffic and upstream provider status/latency for quick local inspection.
+
 ## Publishing to Docker Hub
 - GitHub repository: https://github.com/schedion/llmrouter
 - Docker Hub image: https://hub.docker.com/r/schedion/llmrouter
