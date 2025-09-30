@@ -74,6 +74,8 @@ Published images:
 - `schedion/llmrouter:slim` – no semantic cache dependencies, smallest footprint (multi-arch: `linux/amd64`, `linux/arm64`, `linux/arm/v7`).
 - `schedion/llmrouter:latest` – includes semantic cache extras (published for `linux/amd64` only because PyTorch wheels aren’t available for our other targets).
 
+For the `arm/v7` build we pull Python wheels from [piwheels.org](https://piwheels.org); if you build locally on a Raspberry Pi, keep the same extra index (`PIP_EXTRA_INDEX_URL=https://www.piwheels.org/simple`) to avoid compiling NumPy from source.
+
 ## Publishing to Docker Hub
 - GitHub repository: https://github.com/schedion/llmrouter
 - Docker Hub image: https://hub.docker.com/r/schedion/llmrouter
