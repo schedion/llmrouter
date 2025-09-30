@@ -56,6 +56,7 @@ class ChatCompletionRequest(BaseModel):
     max_tokens: Optional[int] = None
     tools: Optional[List[ToolDefinition]] = None
     tool_choice: Optional[Dict[str, Any]] = None
+    tool_calls: Optional[List[ToolCall]] = Field(default=None, exclude=True)
 
     @validator("messages")
     def validate_messages(cls, value: List[Message]) -> List[Message]:  # noqa: N805
