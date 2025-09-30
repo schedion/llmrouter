@@ -1,7 +1,6 @@
-version: '3.9'
-
 services:
   llmrouter:
+    # Use :slim for smaller image without semantic cache dependencies
     image: schedion/llmrouter:latest
     container_name: llmrouter
     ports:
@@ -15,6 +14,11 @@ services:
       LLMROUTER_MODEL_INDEX_URL: "https://raw.githubusercontent.com/schedion/llmrouter/refs/heads/main/generated/model_index.json"
       # Require providers that match the catalog
       LLMROUTER_PROVIDERS: "groq,openrouter,nvidia_nim,huggingface"
+      # Toggle semantic cache behaviour (set to "on"/"off" or true/false)
+      LLMROUTER_SEMANTIC_CACHE_ENABLED: "off"
+      # Optional: adjust semantic match threshold and cache TTL (seconds)
+      # LLMROUTER_SEMANTIC_CACHE_THRESHOLD: "0.85"
+      # LLMROUTER_CACHE_TTL: "0"
       # Inject your own credentials (use Docker secrets or env files in production)
       PROVIDER_KEY_GROQ: "replace-me"
       PROVIDER_KEY_OPENROUTER: "replace-me"

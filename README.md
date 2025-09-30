@@ -12,6 +12,8 @@ llmrouter is a programmable OpenAI-compatible router for Large Language Models. 
 ```bash
 # install dependencies
 pip install -r requirements.txt
+# optional: install semantic cache extras (pulls in PyTorch)
+pip install -r requirements-semantic.txt
 
 # export provider credentials
 export PROVIDER_KEY_GROQ=...
@@ -47,6 +49,7 @@ Semantic caching controls:
 - override per request using headers:
   - `X-LLMRouter-Semantic-Cache: on|off`
   - `X-LLMRouter-Semantic-Threshold: 0.9`
+- Looking to slim the Docker image? Today we rely on `sentence-transformers`, which pulls in PyTorch. We may switch to an ONNXRuntime-backed embedding loader in the future; if you explore that path, keep the MiniLM model and tokenizer files together and use `onnxruntime` for inference.
 
 Exact-match caching uses `LLMROUTER_CACHE_TTL` (seconds, `0` disables).
 
@@ -66,6 +69,10 @@ A sample Compose file (`docker-compose.sample.yml`) mounts named volumes for con
 ```bash
 docker compose -f docker-compose.sample.yml up -d
 ```
+
+Published images:
+- `schedion/llmrouter:slim` – no semantic cache dependencies, smallest footprint.
+- `schedion/llmrouter:latest` – includes semantic cache extras (same contents pushed with the Git SHA).
 
 ## Publishing to Docker Hub
 - GitHub repository: https://github.com/schedion/llmrouter

@@ -7,7 +7,11 @@ import json
 from typing import Any, Dict, List, Optional
 
 import numpy as np
-from sentence_transformers import SentenceTransformer
+
+try:
+    from sentence_transformers import SentenceTransformer
+except ImportError:  # pragma: no cover - optional dependency
+    SentenceTransformer = None  # type: ignore[assignment]
 
 from app.schemas import ChatCompletionRequest, ToolCall
 
@@ -18,6 +22,11 @@ class SemanticCache:
         model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
         max_entries: int = 512,
     ) -> None:
+        if SentenceTransformer is None:
+            raise RuntimeError(
+                "Semantic cache requires the 'sentence-transformers' optional dependency. "
+                "Install it or disable semantic caching."
+            )
         self.model_name = model_name
         self.max_entries = max_entries
         self._model: Optional[SentenceTransformer] = None
