@@ -72,7 +72,7 @@ docker compose -f docker-compose.sample.yml up -d
 
 Published images:
 - `schedion/llmrouter:slim` – no semantic cache dependencies, smallest footprint (multi-arch: `linux/amd64`, `linux/arm64`, `linux/arm/v7`).
-- `schedion/llmrouter:latest` – includes semantic cache extras (multi-arch: `linux/amd64`, `linux/arm64`; PyTorch does not ship 32-bit ARM wheels, so no `arm/v7`).
+- `schedion/llmrouter:latest` – includes semantic cache extras (published for `linux/amd64` only because PyTorch wheels aren’t available for our other targets).
 
 ## Publishing to Docker Hub
 - GitHub repository: https://github.com/schedion/llmrouter
